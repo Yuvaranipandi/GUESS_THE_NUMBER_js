@@ -1,0 +1,28 @@
+
+    <h1 style>GUESS THE NUMBER</h1>
+    <input id="gnum">
+    <button onclick="check()">check</button>
+    <p id="res">YOU WRONG / RIGHT</p>
+    <p id = "sc">SCORE:10</p>
+    <script>
+        var guess = document.getElementById("gnum")
+        var letter = document.getElementById("res")
+        var randomnum =Math.floor(Math.random()*10)+1
+        var totscore = document.getElementById("sc")
+        var score=10
+        function check()
+        {
+            var enterdnum = guess.value
+            if(randomnum==enterdnum)
+            {
+                letter.textContent="Right"
+                alert("YOU WON")
+            }
+            else
+            {
+                score = score-1
+                totscore.textContent="score:"+score
+                letter.textContent="WRONG"
+            }
+        }
+    </script>
